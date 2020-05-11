@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import Alert from '../components/alert'
 
 import { useMutation } from 'urql';
 
@@ -39,6 +40,9 @@ export default function MessageInput(props : IProps){
             handleClick();
         }
     }
+
+    if(res.error)    
+        return <Alert message={res.error}/>;
 
     return(
         <>            

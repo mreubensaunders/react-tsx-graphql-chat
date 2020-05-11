@@ -5,6 +5,7 @@ import Dynamic from './components/dynamic'
 import Messages from './components/messages'
 import Users from './components/users'
 import MessageInput from './components/messageInput'
+import Loading from './components/loading'
 
 import { useMutation } from 'urql';
 
@@ -26,14 +27,14 @@ function App() {
     userName = prefix[Math.floor(Math.random()*prefix.length)] + '_'
     + suffix[Math.floor(Math.random()*suffix.length)] ;
     executeMutation({name: userName})
-  }, []); //online run once
+  }, []); //only run once
 
   return (
     <div className="App">
       {/* user joins! */}
       
       <div className="main-container">
-        {res.fetching ? 'loaing' :
+        {res.fetching ? <Loading/> :
         
         <>
         {console.log(res)}

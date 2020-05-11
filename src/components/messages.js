@@ -1,5 +1,7 @@
-import React from 'react';
-import { useSubscription } from 'urql';
+import React from 'react'
+import { useSubscription } from 'urql'
+import Alert from '../components/alert'
+
 
 const newMessages = `
   subscription MessageSentSubscription {
@@ -15,6 +17,10 @@ const handleMsgSubscription = (messages = [], response) => {
   return [response.messageSent, ...messages];
 };
 
+function displayMessages(data) {
+
+}
+
 const Messages = ({hex}) => {
   if (hex != undefined){
     console.log('yooo' + hex.id)
@@ -27,13 +33,14 @@ const Messages = ({hex}) => {
   }
   
   return (
+    msgRes.error ? <Alert/> :
     <ul>
       {msgRes.data.map(message => (
         <div className="bubble">
         <span> 
         <div className="username">{message.from} </div>
         <p className="rs-text md"  key={message.id}>
-          {message.message}
+          {message.id} - {message.message}
         </p>
         </span>
         </div>

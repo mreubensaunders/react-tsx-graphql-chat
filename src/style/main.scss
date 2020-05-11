@@ -146,3 +146,26 @@ body{
         background-color: palegreen;
     }
 }
+.error{
+  font-size: 10px;
+  letter-spacing: 1px;
+  .close{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+      right: 0;
+      margin: 0.8em;   
+      .fa-times{
+        color: white;
+        font-size: 2em;
+        &:hover{
+          transition: 100ms ease-in;
+          color: $danger-fade;
+        }
+      }    
+  }        
+}
+.error-msg{
+  font-size: 10px;
+  word-break: break-all;
+}
