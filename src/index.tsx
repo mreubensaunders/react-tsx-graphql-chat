@@ -8,7 +8,7 @@ import { SubscriptionClient } from 'subscriptions-transport-ws';
 import { Client, Provider, defaultExchanges, subscriptionExchange } from 'urql';
 
 const subscriptionClient = new SubscriptionClient(
-  'ws://graphql-chat-backend.herokuapp.com/',
+  'wss://graphql-chat-backend.herokuapp.com/',
   {}
 );
 
