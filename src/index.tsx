@@ -8,12 +8,12 @@ import { SubscriptionClient } from 'subscriptions-transport-ws';
 import { Client, Provider, defaultExchanges, subscriptionExchange } from 'urql';
 
 const subscriptionClient = new SubscriptionClient(
-  'ws://localhost:4000',
+  'ws://graphql-chat-backend.herokuapp.com/',
   {}
 );
 
 const client = new Client({
-  url: 'http://localhost:4000',
+  url: 'https://graphql-chat-backend.herokuapp.com/',
   exchanges: [
     ...defaultExchanges,
     subscriptionExchange({

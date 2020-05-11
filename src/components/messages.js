@@ -40,7 +40,7 @@ const Messages = ({hex}) => {
         <span> 
         <div className="username">{message.from} </div>
         <p className="rs-text md"  key={message.id}>
-          {message.id} - {message.message}
+          {message.message}
         </p>
         </span>
         </div>

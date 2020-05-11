@@ -31,12 +31,11 @@ function App() {
 
   return (
     <div className="App">
-      {/* user joins! */}
       
       <div className="main-container">
         {res.fetching ? <Loading/> :
-        
         <>
+        {/* user joins! */}
         {console.log(res)}
         <Messages hex={res.data}/>
         <MessageInput username={userName} />
